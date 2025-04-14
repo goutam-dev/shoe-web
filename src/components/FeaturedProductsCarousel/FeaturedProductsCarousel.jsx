@@ -33,8 +33,8 @@ function FeaturedProductsCarousel({ onAddToCart }) {
                 <p className="product-description">{product.description}</p>
                 <p className="product-price">${product.price.toFixed(2)}</p>
                 <button
-                  onClick={() => {
-                    onAddToCart(product);
+                  onClick={(e) => {
+                    onAddToCart(product,e);
                   }}
                   className="add-to-cart-btn"
                 >

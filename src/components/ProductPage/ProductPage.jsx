@@ -48,14 +48,14 @@ function ProductPage({ onAddToCart }) {
       <section className="product-grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <div key={product.id} className="product-card">
+            <div onClick={()=>console.log("helll")}  key={product.id} className="product-card">
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <p className="price">${product.price}</p>
               <button
                 className="add-to-cart-btn"
-                onClick={() => onAddToCart(product)}
+                onClick={(e) => onAddToCart(product,e)}
               >
                 Add to Cart
               </button>

@@ -24,7 +24,9 @@ function App() {
     }
   }, [cart]);
 
-  const addToCart = (product) => {
+  const addToCart = (product,e) => {
+    // console.log(e);
+    
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
       if (existingProduct) {
@@ -37,6 +39,10 @@ function App() {
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
+    
+    
+    e.stopPropagation();    
+
   };
 
   const updateCartQuantity = (productId, change) => {
