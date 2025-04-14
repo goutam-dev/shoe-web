@@ -1,0 +1,25 @@
+{
+  "featuredProducts": [
+    {
+      "id": 111,
+      "name": "Men's Running Shoes",
+      "price": 89.99,
+      "description": "Lightweight and breathable running shoes with excellent cushioning.",
+      "image": "/running_men.png"
+    },
+    {
+      "id": 112,
+      "name": "Men's Hiking Boots",
+      "price": 120.00,
+      "description": "Durable boots designed for tough terrains and all-weather conditions.",
+      "image": "hiking_men.jpeg"
+    },
+    {
+      "id": 113,
+      "name": "Men's Loafers",
+      "price": 75.00,
+      "description": "Classic and versatile loafers perfect for casual and formal wear.",
+      "image": "/loafers_men.jpeg"
+    }
+  ]
+}
