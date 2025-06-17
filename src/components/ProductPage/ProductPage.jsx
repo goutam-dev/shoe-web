@@ -4,7 +4,7 @@ import productsData from "../../data/products.json";
 
 function ProductPage({ onAddToCart }) {
   // console.log(onAddToCart);
-  
+
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -48,14 +48,18 @@ function ProductPage({ onAddToCart }) {
       <section className="product-grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <div onClick={()=>console.log("helll")}  key={product.id} className="product-card">
+            <div
+              onClick={() => (window.location.href = `/product/${product.id}`)}
+              key={product.id}
+              className="product-card"
+            >
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <p className="price">${product.price}</p>
               <button
                 className="add-to-cart-btn"
-                onClick={(e) => onAddToCart(product,e)}
+                onClick={(e) => onAddToCart(product, e)}
               >
                 Add to Cart
               </button>

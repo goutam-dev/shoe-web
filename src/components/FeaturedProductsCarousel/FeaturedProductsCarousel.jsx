@@ -4,9 +4,11 @@ import productsData from "../../data/featured-products.json";
 import "./FeaturedProductsCarousel.css";
 
 function FeaturedProductsCarousel({ onAddToCart }) {
-  // console.log(onAddToCart);
-  
   const products = productsData.featuredProducts;
+
+  const handleProductClick = (productId) => {
+    window.location.href = `/product/${productId}`;
+  };
 
   return (
     <section className="featured-products-carousel" id="products">
@@ -24,17 +26,22 @@ function FeaturedProductsCarousel({ onAddToCart }) {
       >
         {products.map((product) => (
           <div key={product.id} className="product-slide">
-            <div className="product-content">
+            <div
+              className="product-content"
+              onClick={() => handleProductClick(product.id)}
+            >
               <div className="product-image">
                 <img src={product.image} alt={product.name} />
               </div>
               <div className="product-details">
                 <h3>{product.name}</h3>
+                <p className="product-category">{product.category}</p>
                 <p className="product-description">{product.description}</p>
                 <p className="product-price">${product.price.toFixed(2)}</p>
                 <button
                   onClick={(e) => {
-                    onAddToCart(product,e);
+                    e.stopPropagation();
+                    onAddToCart(product, e);
                   }}
                   className="add-to-cart-btn"
                 >

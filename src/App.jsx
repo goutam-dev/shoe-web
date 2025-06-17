@@ -1,10 +1,12 @@
-// Updated App Component
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Features from "./components/Features/Features";
 import FeaturedProductsCarousel from "./components/FeaturedProductsCarousel/FeaturedProductsCarousel";
 import ProductPage from "./components/ProductPage/ProductPage";
+import DetailedProductPage from "./components/DetailedProductPage/DetailedProductPage";
 import Reviews from "./components/Reviews/Reviews";
 import Footer from "./components/Footer/Footer";
 
@@ -24,9 +26,7 @@ function App() {
     }
   }, [cart]);
 
-  const addToCart = (product,e) => {
-    // console.log(e);
-    
+  const addToCart = (product, e) => {
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
       if (existingProduct) {
@@ -39,10 +39,7 @@ function App() {
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
-    
-    
-    e.stopPropagation();    
-
+    if (e) e.stopPropagation();
   };
 
   const updateCartQuantity = (productId, change) => {
@@ -70,20 +67,33 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <Header
         cart={cart}
         onRemoveFromCart={removeFromCart}
         onUpdateCartQuantity={updateCartQuantity}
         onClearCart={handleClearCart}
       />
-      <Home />
-      <Features />
-      <FeaturedProductsCarousel onAddToCart={addToCart} />
-      <ProductPage onAddToCart={addToCart} />
-      <Reviews />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <Features />
+              <FeaturedProductsCarousel onAddToCart={addToCart} />
+              <ProductPage onAddToCart={addToCart} />
+              <Reviews />
+            </>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={<DetailedProductPage onAddToCart={addToCart} />}
+        />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

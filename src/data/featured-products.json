@@ -1,25 +1,29 @@
+
 {
   "featuredProducts": [
     {
-      "id": 111,
-      "name": "Men's Running Shoes",
-      "price": 89.99,
-      "description": "Lightweight and breathable running shoes with excellent cushioning.",
-      "image": "/running_men.png"
-    },
-    {
-      "id": 112,
-      "name": "Men's Hiking Boots",
+      "id": 1,
+      "name": "Classic White Sneakers",
+      "category": "Sneakers",
       "price": 120.00,
-      "description": "Durable boots designed for tough terrains and all-weather conditions.",
-      "image": "hiking_men.jpeg"
+      "description": "Stylish white sneakers for everyday wear.",
+      "image": "/classic_white.png"
     },
     {
-      "id": 113,
-      "name": "Men's Loafers",
-      "price": 75.00,
-      "description": "Classic and versatile loafers perfect for casual and formal wear.",
-      "image": "/loafers_men.jpeg"
+      "id": 5,
+      "name": "Formal Oxford Shoes",
+      "category": "Formal Shoes",
+      "price": 150.00,
+      "description": "Classic Oxford shoes for formal occasions.",
+      "image": "/formal_oxford.png"
+    },
+    {
+      "id": 9,
+      "name": "Ankle-Length Chelsea Boots",
+      "category": "Boots",
+      "price": 180.00,
+      "description": "Sleek Chelsea boots with a modern silhouette.",
+      "image": "/ankle_length.png"
     }
   ]
 }

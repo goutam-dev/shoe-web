@@ -1,20 +1,24 @@
+
 [
     {
         "id": 1,
+        "productId": 1,
         "name": "John Doe",
-        "review": "This is a fantastic product! Highly recommend it.",
+        "review": "These classic white sneakers are fantastic! Highly recommend them.",
         "rating": 5
     },
     {
         "id": 2,
+        "productId": 2,
         "name": "Jane Smith",
-        "review": "Good value for the price. Could be improved in some areas.",
+        "review": "The retro high-tops are good value for the price. Could be improved in some areas.",
         "rating": 4
     },
     {
         "id": 3,
+        "productId": 3,
         "name": "Robert Brown",
-        "review": "Not what I expected. Would not buy again.",
+        "review": "The slip-ons weren't what I expected. Would not buy again.",
         "rating": 2
     }
 ]
